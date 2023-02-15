@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <!-- Icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <title>Login</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="name">
+      <a href="index.html">
+        RJB
+      </a>
+    </div>
+    <div class="navigation">
+      <input type="checkbox" class="toggle-menu">
+      <div class="hamburger"></div>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="plans.html">Plans</a></li>
+        <li><a href="career.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header><br>
+  <br>
+  <br>
+
+  <!----------sign-in------------------>
+  <section>
+    <div class="container">
+      <form id="signup-form">
+        <h4 class="text-dark text-center fw-bold">Login to your account</h4>
+        <p class="text-dark text-center">Type in your details here to manage your account.</p>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <label for="password-confirm">Confirm Password:</label>
+        <input type="password" id="password-confirm" name="password-confirm">
+        <br>
+        <input type="button" value="Sign In" onclick="validateForm()" class="bg-primary">
+      </form>
+      <script>
+        function validateForm() {
+          var password = document.getElementById("password").value;
+          var passwordConfirm = document.getElementById("password-confirm").value;
+          var username = document.getElementById("username").value;
+
+          console.log("Username: " + username);
+          console.log("Password: " + password);
+          console.log("Confirm Password: " + passwordConfirm);
+
+          if (password != passwordConfirm) {
+            alert("Passwords do not match!");
+          } else if (password.length < 8) {
+            alert("Password must be at least 8 characters long.");
+          } else if (username.length < 5) {
+            alert("Username must be at least 5 characters long.");
+          } else {
+            // submit the form
+            document.getElementById("signup-form").submit();
+          }
+        }
+      </script>
+    </div>
+  </section>
+
+  <!----------sign-up------------------>
+  <section>
+    <div class="container">
+      <h4 class="text-light text-center">Don't have an account yet? Click the button below to register.</h4><br>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary my-button" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">Register</button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Registration Form</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container" id="validation">
+                <form class="needs-validation" action="https://formsubmit.co/rjbfibersolutions@gmail.com" method="POST"
+                  novalidate>
+                  <div class="user-details">
+                    <div class="col input-group">
+                      <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                      <input type="text" class="form-control" id="uname" placeholder="Enter Name" required>
+                      <div class="valid-feedback">Valid</div>
+                      <div class="invalid-feedback">Please fill-out this field</div>
+                    </div><br>
+
+                    <div class="col input-group">
+                      <span class="input-group-text"><i class="bi bi-person-fill-add"></i></span>
+                      <input type="text" class="form-control" id="uname" placeholder="Enter Username" required>
+                      <div class="valid-feedback">Valid</div>
+                      <div class="invalid-feedback">Please fill-out this field</div>
+                    </div><br>
+
+                    <div class="col input-group">
+                      <span class="input-group-text"><i class="bi bi-envelope-fill"></i></i></span>
+                      <input type="email" class="form-control" id="email"
+                        placeholder="Enter Email (Atleast 5 characters long)" required>
+                      <div class="valid-feedback">Valid</div>
+                      <div class="invalid-feedback">Please fill-out this field</div>
+                    </div><br>
+
+                    <div class="col input-group">
+                      <span class="input-group-text"><i class="bi bi-file-lock-fill"></i></span>
+                      <input type="password" class="form-control" id="pwd"
+                        placeholder="Enter Password (Atleast 8 characters long)" required>
+                      <div class="valid-feedback">Valid</div>
+                      <div class="invalid-feedback">Please fill-out this field</div>
+                    </div><br>
+
+                    <div class="col input-group">
+                      <span class="input-group-text"><i class="bi bi-file-earmark-lock-fill"></i></span>
+                      <input type="password" class="form-control" id="pwd"
+                        placeholder="Confirm Password (Atleast 8 characters long)" required>
+                      <div class="valid-feedback">Valid</div>
+                      <div class="invalid-feedback">Please fill-out this field</div>
+                    </div><br>
+
+                    <div class="form-check">
+                      <input type="radio" class="form-check-input" id="r1">
+                      <label class="form-check-label text-dark" for="check1">I agree to the <a href="terms.html">Terms,
+                          Conditions and Privacy Policy.</a></label><br>
+                      <br>
+
+                      <!----------Will route to the main page after submission (change the value)------------->
+
+                      <div>
+                        <input type="hidden" name="_next"
+                          value="https://justinevictoria.github.io/RJB-Fiber-Solutions/">
+                        <input type="hidden" name="_autoresponse" value="Thank you, your details has been submitted">
+                        <button type="submit" class="btn btn-primary" id="formbuttons"
+                          onclick="alert('Form Submitted')">Submit</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div><br>
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><br>
+
+  <!---------------------Privacy Content---------------------------->
+  <div class="container">
+    <div class="p-5 text-light text-center">
+      <h4 class="text-warning">PRIVACY NOTICE</h4>
+      <p class="text-white text-center"><span class="text-warning">RJB Fiber Solutions,</span> together with its
+        subsidiaries and affiliates, is a leading provider of Internet and Fiber connection services. We take
+        responsibility to protect the personal information provided to us seriously.</p><br>
+      <p class="text-white text-center">All personal information we collect from you are only for the purposes
+        of dealing with your inquiry.</p><br>
+      <p class="text-white text-center">Rest assured that we keep your personal information secure with the appropriate
+        level
+        of security and we'll only keep for as long as we need it for legitimate business or legal reasons. We will then
+        delete it
+        safely and securely. For more information about how RJB Fiber Solutions processes your personal data, please
+        view our <a href="terms.html">privacy statement</a>.</p>
+    </div>
+  </div>
+
+  <div style="width: 100%; text-align: center;">
+    <button id="history" style="font-size: 10px;" onclick="history.back()">Go Back</button>
+    <button id="history" style="font-size: 10px;" onclick="history.forward()">Next</button>
+  </div>
+
+  <footer>
+    <div class="footer-col">
+      <h2>Our Company</h2>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="terms.html">Terms & Conditions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2>Our Services</h2>
+      <ul>
+        <li><a href="plans.html">Fiber Plans</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a class="nav-link active text-warning" href="login.html">View your account</a></li>
+        <li><a href="payment.html">Pay</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2>Careers</h2>
+      <ul>
+        <li><a href="career.html">Open Positions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2>Contact Us</h2>
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=100089831125794"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+  </footer>
+
+</body>
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function () {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
+</script>
+
+</html>
